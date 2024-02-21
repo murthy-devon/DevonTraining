@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatIconModule} from '@angular/material/icon';
-import { Interface } from 'readline';
 
 //this data should come from API
 //need to loop through the response object
