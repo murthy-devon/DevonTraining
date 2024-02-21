@@ -1,0 +1,90 @@
+
+<div class="image">
+  <img [src]="path"[alt]="alttext" />
+  <img [src]="path1"[alt]="alttext1" />
+</div>
+
+
+<h1>Technical Training Courses</h1>
+
+ <div fxLayout fxLayoutAlign="left left">
+    <mat-form-field fxFlex="20%">
+      <input matInput type="text" (keyup)="doFilter($event)" placeholder="Search">
+    </mat-form-field>
+  </div>
+
+  <section>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">Add New Training</button>
+      <button mat-raised-button color="primary">View Available Trainings</button>
+    </div>
+  </section>
+<div class="example-container mat-elevation-z8">
+
+
+
+  <mat-table #table [dataSource]="dataSource" style="width: 175%;">
+
+    
+
+   <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainingId}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="certificationName">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainingName}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="certificationProviderName">
+      <mat-header-cell *matHeaderCellDef> Certification Providor Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.certificateProviderName}} </mat-cell>
+    </ng-container>
+
+       <!-- Duration Column -->
+       <ng-container matColumnDef="trainingDuration">
+        <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.trainingDuration}} </mat-cell>
+      </ng-container>
+
+    <!-- Level Column -->
+    <ng-container matColumnDef="trainingLevel">
+      <mat-header-cell *matHeaderCellDef> Training Level </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainingLevel}} </mat-cell>
+    </ng-container>
+
+     <!-- categoryname Column -->
+     <ng-container matColumnDef="categoryName">
+      <mat-header-cell *matHeaderCellDef> Category Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.categoryName}} </mat-cell>
+    </ng-container>
+
+    <!-- trainerName Column -->
+      <ng-container matColumnDef="trainerName">
+        <mat-header-cell *matHeaderCellDef> Trainer Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.trainerName}} </mat-cell>
+    </ng-container>
+
+    <!-- trainerName Column -->
+    <ng-container matColumnDef="trainingDetail">
+      <mat-header-cell *matHeaderCellDef> Training Details </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trainingDetail}} </mat-cell>
+    </ng-container>
+      
+    <mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnsToDisplayWithExpand;"></mat-row>
+
+
+
+
+  </mat-table>
+
+
+  
